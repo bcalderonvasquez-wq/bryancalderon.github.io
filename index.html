@@ -1,313 +1,208 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <!-- Define un ancho fijo tipo PC para pantallas de teléfonos -->
     <meta name="viewport" content="width=1024">
+    <title>Para ti mi "VIDA"</title>
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fffbf0;
+            margin: 0;
+            padding: 20px 0;
+            text-align: center;
+        }
 
+        /* Video de fondo */
+        #videoFondo {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            transform: translate(-50%, -50%);
+            opacity: 0.35;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Corazones y rosas flotantes a los lados */
+        .decoracion-izq,
+        .decoracion-der {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            font-size: 40px;
+            z-index: 100;
+        }
+
+        .decoracion-izq { left: 20px; }
+        .decoracion-der { right: 20px; }
+
+        .decoracion-izq div,
+        .decoracion-der div {
+            animation: latido 2s infinite;
+        }
+
+        @keyframes latido {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        /* Contenedor principal para organizar la tarjeta */
+        .contenedor {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .titulo {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .boton-musica {
+            background: #FFFFC5;
+            color: black;
+            border: 2px solid #ffd700;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+
+        img.perfil {
+            display: block;
+            margin: 20px auto;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid gold;
+        }
+
+        /* Estructura del poema con las imágenes de Snoopy */
+        .contenedor-poema {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .snoopy img {
+            width: 120px;
+            opacity: 0.6;
+            animation: flotar 3s ease-in-out infinite;
+        }
+
+        .poema {
+            text-align: center;
+            max-width: 500px;
+            line-height: 1.6;
+        }
+
+        @keyframes flotar {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
 <body>
 
-<div class="decoracion-izq">
-    <div>💖</div>
-    <div>🌹</div>
-    <div>💖</div>
-    <div>🌹</div>
-    <div>💖</div>
-</div>
-
-<div class="decoracion-der">
-    <div>💖</div>
-    <div>🌹</div>
-    <div>💖</div>
-    <div>🌹</div>
-    <div>💖</div>
-</div>
-
-<audio id="musica" autoplay loop>
-    <source src="melodia.mp3" type="audio/mpeg">
-</audio>
-
-<video autoplay muted loop id="videoFondo">
-    <source src="video.mp4" type="video/mp4">
-</video>
-
-
-<div class="contenedor">
-
-<div class="titulo">
-    🌻 PARA TI MI "VIDA" 🌻
-</div>
-
-
-<button onclick="document.getElementById('musica').play()" class="boton-musica">
-🎵 Presiona aqui mi amor :)
-</button>
-
-
-<h2>21 de Septiembre - Día de las Flores Amarillas</h2>
-
-<img src="abigail.jpeg" alt="Abigail">
-
-<style>
-
-.decoracion-izq,
-.decoracion-der{
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 40px; /* antes 60px */
-    font-size: 50px;
-    z-index: 100;
-}
-
-.decoracion-izq{
-    left: 40px;
-
-}
-
-.decoracion-der{
-    right: 40px;
-
-}
-
-.decoracion-izq div,
-.decoracion-der div{
-    animation: latido 2s infinite;
-}
-
-@keyframes latido{
-    0%{
-        transform: scale(1);
-    }
-    50%{
-        transform: scale(1.2);
-    }
-    100%{
-        transform: scale(1);
-    }
-}
-
-.boton-musica{
-    background: #FFFFC5;
-    color: black;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 25px;
-    font-size: 18px;
-    cursor: pointer;
-    margin: 15px;
-}
-
-img{
-    display:block;
-    margin:20px auto;
-    width:150px;
-    height:150px;
-    object-fit:cover;
-    border-radius:50%;
-    border:4px solid gold;
-}
-
-#videoFondo{
-    position: fixed;
-    top: 90%;
-    left: 50%;
-    width: 900px;
-    height: auto;
-    transform: translate(-50%, -50%);
-    opacity: 0.50;
-    z-index: -1;
-}
-
-.contenedor{
-    background: rgba(255,255,255,0.20);
-    padding: 30px;
-    border-radius: 20px;
-    max-width: 800px;
-    margin: 50px auto;
-}
-
-.titulo{
-    text-align: center;
-    font-size: 40px;
-    margin: 20px auto;
-}
-
-
-.poema{
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-
-
-.contenedor-poema{
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
-    gap:40px;
-    max-width:1200px;
-    margin:auto;
-}
-
-.snoopy{
-    margin-top:150px;
-}
-
-.snoopy img{
-    width:150px;
-    opacity:0.35;
-    animation: flotar 3s ease-in-out infinite;
-}
-
-.poema{
-    text-align:center;
-    max-width:800px;
-}
-
-@keyframes flotar{
-    0%{
-        transform:translateY(0px);
-    }
-    50%{
-        transform:translateY(-15px);
-    }
-    100%{
-        transform:translateY(0px);
-    }
-}
-
-
-
-.contenedor-poema{
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
-    gap:40px;
-}
-
-.snoopy-izq img,
-.snoopy-der img{
-    width:150px;
-    opacity:0.35;
-    animation:flotar 3s ease-in-out infinite;
-}
-
-.snoopy-izq,
-.snoopy-der{
-    margin-top:180px;
-}
-
-@keyframes flotar{
-    0%{
-        transform:translateY(0px);
-    }
-    50%{
-        transform:translateY(-15px);
-    }
-    100%{
-        transform:translateY(0px);
-    }
-}
-
-
-</style>
-
-<p>
-Querida Abigail:
-</p>
-
-<p>
-Hoy quiero regalarte esto como símbolo de alegría,
-amor, esperanza y felicidad.
-</p>
-
-<p>
-Que nunca te falten motivos para sonreír, metas por alcanzar y personas
-que te quieran tanto como yo, "TE AMOOOOO".
-</p>
-
-<p>
-🌻 Eres mi orgullo y mi mayor alegría. 🌻
-</p>
-
-<p>
-💛 Con todo mi amor para ti, Mi Princesa Abigail. 💛
-</p>
-
-
-
-
-<div class="contenedor-poema">
-
-    <div class="snoopy-izq">
-        <img src="snoopy.jpg" alt="Snoopy">
+    <!-- Elementos flotantes decorativos laterales -->
+    <div class="decoracion-izq">
+        <div>💖</div>
+        <div>🌹</div>
+        <div>💖</div>
+        <div>🌹</div>
+        <div>💖</div>
     </div>
 
-
-<div class="poema">
-
-<h2>🌻 Un poema para TI 🌻</h2>
-
-<p>
-Como las flores amarillas que buscan la luz del sol,<br>
-así brilla tu sonrisa iluminando mi corazón.
-</p>
-
-<p>
-Cada pétalo guarda un recuerdo,<br>
-cada color refleja la alegría que has traído a mi vida.
-</p>
-
-<p>
-Cuando te veo crecer, comprendo que los tesoros más valiosos<br>
-no se encuentran en el mundo, sino en el amor de una hija.
-</p>
-
-<p>
-Hoy te regalo estas flores amarillas,<br>
-no solo por su belleza,<br>
-sino porque representan la felicidad que siento al ser parte de tu vida.
-</p>
-
-<p>
-Que nunca te falten sueños por cumplir,<br>
-caminos por recorrer,<br>
-ni razones para sonreír.
-</p>
-
-<p>
-Y cuando algún día veas una flor amarilla,<br>
-recuerda que en cada una de ellas viaja un abrazo mío,<br>
-un "te quiero" sincero<br>
-y el inmenso orgullo que siento por ti.
-</p>
-
-<p>
-💛 Con todo mi amor para ti, Mi Princesa Abigail. 💛
-</p>
-
-</div>
-
-<div class="snoopy-der">
-        <img src="snoopy.jpg" alt="Snoopy">
+    <div class="decoracion-der">
+        <div>💖</div>
+        <div>🌹</div>
+        <div>💖</div>
+        <div>🌹</div>
+        <div>💖</div>
     </div>
 
-</div>
+    <!-- Audio y Video de fondo -->
+    <audio id="musica" autoplay loop>
+        <source src="melodia.mp3" type="audio/mpeg">
+    </audio>
 
-<script>
-window.addEventListener('load', function() {
-    const musica = document.getElementById('musica');
-    musica.play().catch(() => {
-        console.log("El navegador requiere interacción del usuario para reproducir audio.");
-    });
-});
-</script>
+    <video autoplay muted loop id="videoFondo">
+        <source src="video.mp4" type="video/mp4">
+    </video>
 
-</head>
+    <!-- Contenido Principal -->
+    <div class="contenedor">
+
+        <div class="titulo">🌻 PARA TI MI "VIDA" 🌻</div>
+
+        <button onclick="document.getElementById('musica').play()" class="boton-musica">
+            🎵 Presiona aquí mi amor :)
+        </button>
+
+        <h2>21 de Septiembre - Día de las Flores Amarillas</h2>
+
+        <img src="abigail.jpeg" alt="Abigail" class="perfil">
+
+        <p>Querida Abigail:</p>
+        <p>Hoy quiero regalarte esto como símbolo de alegría, amor, esperanza y felicidad.</p>
+        <p>Que nunca te falten motivos para sonreír, metas por alcanzar y personas que te quieran tanto como yo, <strong>"TE AMOOOOO"</strong>.</p>
+        <p>🌻 Eres mi orgullo y mi mayor alegría. 🌻</p>
+        <p>💛 Con todo mi amor para ti, Mi Princesa Abigail. 💛</p>
+
+        <!-- Poema ordenado con Snoopys a los lados -->
+        <div class="contenedor-poema">
+            <div class="snoopy">
+                <img src="snoopy.jpg" alt="Snoopy">
+            </div>
+
+            <div class="poema">
+                <h2>🌻 Un poema para TI 🌻</h2>
+                <p>Como las flores amarillas que buscan la luz del sol,<br>así brilla tu sonrisa iluminando mi corazón.</p>
+                <p>Cada pétalo guarda un recuerdo,<br>cada color refleja la alegría que has traído a mi vida.</p>
+                <p>Cuando te veo crecer, comprendo que los tesoros más valiosos<br>no se encuentran en el mundo, sino en el amor de una hija.</p>
+                <p>Hoy te regalo estas flores amarillas,<br>no solo por su belleza,<br>sino porque representan la felicidad que siento al ser parte de tu vida.</p>
+                <p>Que nunca te falten sueños por cumplir,<br>caminos por recorrer,<br>ni razones para sonreír.</p>
+                <p>Y cuando algún día veas una flor amarilla,<br>recuerda que en cada una de ellas viaja un abrazo mío,<br>un "te quiero" sincero<br>y el inmenso orgullo que siento por ti.</p>
+                <p>💛 Con todo mi amor para ti, Mi Princesa Abigail. 💛</p>
+            </div>
+
+            <div class="snoopy">
+                <img src="snoopy.jpg" alt="Snoopy">
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            const musica = document.getElementById('musica');
+            musica.play().catch(() => {
+                console.log("El navegador requiere interacción del usuario para reproducir audio.");
+            });
+        });
+    </script>
+
 </body>
 </html>
