@@ -143,7 +143,7 @@
         .mensaje-carta {
             font-size: 15px;
             line-height: 1.5;
-            color: #333;
+            color: #000000;
             margin-bottom: 20px;
         }
 
@@ -165,17 +165,22 @@
             margin: 10px 0;
         }
 
-        .snoopy-banner img {
-            width: 75px;
-            height: auto;
-            opacity: 0.85;
-            animation: flotar 3s ease-in-out infinite;
-        }
+       .snoopy-banner img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%; /* Hace que la imagen sea totalmente circular */
+    border: 2px solid #ffd700; /* Borde dorado alrededor de la bolita */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra para resaltar */
+    opacity: 0.95;
+    animation: flotar 3s ease-in-out infinite;
+}
 
         .poema {
             text-align: center;
             line-height: 1.6;
             font-size: 15px;
+color: #000000;
         }
 
         .poema h2 {
